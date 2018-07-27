@@ -1,0 +1,27 @@
+# -----------------------------------------------------------------------------
+# /etc/apt/apt.conf.d/50unattended-upgrades
+# file that sets the unattended-upgrades policy for Ubuntu FSDPs
+# Last Edited: 5/31/17
+# -----------------------------------------------------------------------------
+
+Unattended-Upgrade::Allowed-Origins {
+      "${distro_id}:${distro_codename}";
+      "${distro_id}:${distro_codename}-security";
+      "${distro_id}:${distro_codename}-updates";
+};
+
+# -----------------------------------------------------------------------------
+# blacklist samba upgrade so that upgrades can be tested before deployment
+
+Unattended-Upgrade::Package-Blacklist {
+      "samba"
+};
+
+# -----------------------------------------------------------------------------
+# Mail on error only, reboot automatically, and reboot after 1 minute
+
+Unattended-Upgrade::MailOnlyOnError "true";
+Unattended-Upgrade::Automatic-Reboot "true";
+Unattended-Upgrade::Automatic-Reboot-Time "01:00";
+
+# -----------------------------------------------------------------------------
