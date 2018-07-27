@@ -1,0 +1,19 @@
+#!/bin/bash
+# check for updates
+# set as a login item in system preferences
+
+# returns blank if 8.8.8.8 is reachable
+checkNW="$(ping 8.8.8.8 -c 2 | grep 'Request timeout for icmp_seq')"
+
+# check if checkNW is blank
+if [ "$checkNW" == "" ] ; then
+	/usr/sbin/softwareupdate -l
+else
+	echo "Not connected to the internet"
+fi
+
+# find the PID of the terminal instance opened at login
+terminalPID="$(ps ax | grep 'Terminal' | grep -v 'grep Terminal' | awk '{print $1}')"
+
+# kill the terminal instance
+kill "$terminalPID"
