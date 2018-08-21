@@ -1,11 +1,11 @@
 #!/bin/bash
-# ---------------------------------------------------------------------------- #
+# ----------------------------------------------------------------------------
 # flashVersionCheck
 # Extension attribute for Jamf Pro
 # Checks local Adobe Flash Player version against latest version per
 # http://www.adobe.com/software/flash/about/
 # Last Edited: 10/29/17 Julian Thies
-# ---------------------------------------------------------------------------- #
+# ----------------------------------------------------------------------------
 
 # deprecated version still listed on web page
 depVersion="27.0.0.170"
@@ -46,3 +46,4 @@ else
   exit
 fi
 exit
+# ----------------------------------------------------------------------------
