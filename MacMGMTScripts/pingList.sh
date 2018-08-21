@@ -1,14 +1,18 @@
 #!/bin/bash
-# ping list
+# pingList.sh
+# ping a list of hosts by IP in order, read from a text file
 # param $1 is the path to the file to read
+# Last Edited: 8/21/18 Julian Thies
 
 # file format
 ##############################
+#~
 #10.0.0.1
 #10.0.0.2
 #10.0.0.240
 #10.0.0.5
 #10.0.4.8
+#~
 ##############################
 
 if [ "$1" == "" ] ; then
